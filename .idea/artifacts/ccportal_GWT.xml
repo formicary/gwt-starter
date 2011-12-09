@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact name="ccportal:GWT">
+    <output-path>$PROJECT_DIR$/out/artifacts/ccportal_GWT</output-path>
+    <root id="root">
+      <element id="gwt-compiler-output" facet="ccportal/gwt/GWT" />
+    </root>
+  </artifact>
+</component>
