@@ -6,9 +6,9 @@
         <div class="container">
           <a class="brand" href="#">Some Portal</a>
           <ul class="nav" ui:field="nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><g:Anchor href="#" text="Home" styleName="active"/></li>
+            <li><g:Anchor href="#about" ui:field="stocks" text="Stocks" /></li>
+            <li><g:Anchor href="#contact" text="Contact" /></li>
           </ul>
           <form action="" class="pull-right">
             <g:TextBox styleName="input-small" ui:field="user"/>

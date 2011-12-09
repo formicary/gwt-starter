@@ -33,6 +33,7 @@ public class TopNavBar extends Composite {
   @UiField TextBox user;
   @UiField PasswordTextBox password;
   @UiField UListElement nav;
+  @UiField Anchor stocks;
 
   public TopNavBar() {
     initWidget(binder.createAndBindUi(this));
@@ -41,13 +42,16 @@ public class TopNavBar extends Composite {
     password.getElement().setAttribute("placeholder", "Password");
   }
 
-  @UiHandler("loginButton")
+  @UiHandler({"stocks", "loginButton"})
   public void handleClick(ClickEvent event) {
-    presenter.login(user.getValue(), password.getValue());
+    if(event.getSource() == loginButton)
+      presenter.login(user.getValue(), password.getValue());
+    else {
+     // presenter.viewSelected(((Anchor)event.getSource()).getName());
+    }
   }
 
-
-  @UiHandler("password")
+  @UiHandler({"password", "user"})
   public void handleKeyPress(KeyPressEvent event) {
     if(event.getCharCode() == KeyCodes.KEY_ENTER) {
       presenter.login(user.getValue(), password.getValue());
