@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="App" type="GWT.ConfigurationType" factoryName="GWT Configuration">
+    <module name="gwt-starter" />
+    <option name="RUN_PAGE" value="CCPortal.html" />
+    <option name="OPEN_IN_BROWSER" value="false" />
+    <option name="UPDATE_RESOURCES_ON_FRAME_DEACTIVATION" value="true" />
+    <RunnerSettings RunnerId="Run" />
+    <ConfigurationWrapper RunnerId="Run" />
+    <method />
+  </configuration>
+</component>
