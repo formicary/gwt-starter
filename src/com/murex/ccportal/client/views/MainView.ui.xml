@@ -1,0 +1,8 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:views="urn:import:com.murex.ccportal.client.views">
+  <g:HTMLPanel>
+    <views:TopNavBar ui:field="navBar"/>
+    <views:StockWatcher ui:field="watcher"/>
+  </g:HTMLPanel>
+</ui:UiBinder>
