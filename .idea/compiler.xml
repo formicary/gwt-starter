@@ -17,7 +17,7 @@
     </wildcardResourcePatterns>
     <annotationProcessing enabled="false" useClasspath="false">
       <processorPath value="$PROJECT_DIR$/buildlib/mvp4g-apt-1.3.0.jar" />
-      <processModule name="ccportal" generatedDirName=".apt_generated" />
+      <processModule name="gwt-starter" generatedDirName=".apt_generated" />
     </annotationProcessing>
   </component>
 </project>

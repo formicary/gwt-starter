@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ccportal.iml" filepath="$PROJECT_DIR$/ccportal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gwt-starter.iml" filepath="$PROJECT_DIR$/gwt-starter.iml" />
     </modules>
   </component>
 </project>
