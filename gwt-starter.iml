@@ -135,6 +135,17 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-4/javax.servlet/servlet-api/c12498cf18507aa6433a94eb7d3e77d5/jars/servlet-api-2.5.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-4/javax.servlet/servlet-api/c12498cf18507aa6433a94eb7d3e77d5/sources/servlet-api-2.5-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
           <root url="jar://$USER_HOME$/.gradle/caches/artifacts-4/ch.qos.logback/logback-core/c12498cf18507aa6433a94eb7d3e77d5/jars/logback-core-1.0.0.jar!/" />
         </CLASSES>
         <JAVADOC />
