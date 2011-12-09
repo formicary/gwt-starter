@@ -67,7 +67,7 @@ public class TopNavBar extends Composite {
   }
 
   public void showLoggedOutNav() {
-//    nav.setInnerHTML("<li><a href='bar'>oobbadf</a></li>");
+    nav.setInnerHTML("");
     nav.appendChild(createNavItem("/", "Home", true));
     nav.appendChild(createNavItem("#about", "About", false));
     nav.appendChild(createNavItem("#contact", "Contact", false));
