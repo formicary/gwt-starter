@@ -17,4 +17,7 @@
   <listener>
     <listener-class>com.murex.ccportal.server.CCGuiceContextListener</listener-class>
   </listener>
+  <welcome-file-list>
+    <welcome-file>CCPortal.html</welcome-file>
+  </welcome-file-list>
 </web-app>
