@@ -20,7 +20,7 @@ public class TopNavBarPresenter extends BasePresenter<TopNavBar, CCEventBus> {
   public void onStart() {
     eventBus.changeNav(view);
     view.showLoggedOutNav();
-    goToHome();
+//    goToHome();
   }
 
   public void login(String user, String password) {
@@ -37,15 +37,15 @@ public class TopNavBarPresenter extends BasePresenter<TopNavBar, CCEventBus> {
   }
 
   public void goToStocks() {
-    eventBus.goToStocks();
+    eventBus.stocks();
   }
 
   public void goToHome() {
-    eventBus.goToHome();
+    eventBus.home();
   }
 
   public void goToContact() {
-    eventBus.goToContact();
+    eventBus.contacts();
   }
 
   public boolean isLoggedIn() {
