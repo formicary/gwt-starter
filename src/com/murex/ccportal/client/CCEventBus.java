@@ -27,7 +27,7 @@ public interface CCEventBus extends EventBus {
   @Event(handlers = {TopNavBarPresenter.class})
   void start();
 
-  @Event(handlers = {StockPresenter.class, TopNavBarPresenter.class})
+  @Event(handlers = {StockPresenter.class})
   void login();
 
   @Event(handlers = HomePresenter.class)

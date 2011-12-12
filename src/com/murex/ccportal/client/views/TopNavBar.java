@@ -136,5 +136,6 @@ public class TopNavBar extends Composite implements ReverseViewInterface<TopNavB
     items.add(createNavItem(Views.home, "Reports", false));
     items.add(createNavItem(Views.home, "Contact", false));
     syncItems();
+    loginButton.setText("Sign out");
   }
 }

@@ -22,10 +22,8 @@ public class TopNavBarPresenter extends BasePresenter<TopNavBar, CCEventBus> {
   }
 
   public void login(String user, String password) {
+    //TODO some check against a backend service to see if we can login, if not then dont fire event
     eventBus.login();
-  }
-
-  public void onLogin() {
     view.showLoggedInNav();
   }
 
