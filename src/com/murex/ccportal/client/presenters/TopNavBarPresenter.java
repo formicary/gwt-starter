@@ -15,12 +15,9 @@ import com.mvp4g.client.presenter.BasePresenter;
 @Singleton
 public class TopNavBarPresenter extends BasePresenter<TopNavBar, CCEventBus> {
 
-  public TopNavBarPresenter() {
-    System.out.println("Creating topnavbar presenter");
-  }
-
   public void onStart() {
     eventBus.changeNav(view);
+    view.showLoggedOutNav();
     goToHome();
   }
 

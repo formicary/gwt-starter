@@ -1,15 +1,11 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+             xmlns:g='urn:import:com.google.gwt.user.client.ui' xmlns:widgets="urn:import:com.murex.ccportal.client.widgets">
   <g:HTMLPanel>
     <div class="topbar">
       <div class="fill">
         <div class="container">
           <a class="brand" href="#">Some Portal</a>
-          <ul class="nav" ui:field="nav">
-            <li><g:Anchor href="#" text="Home" ui:field="home" name="home"/></li>
-            <li><g:Anchor href="#about" ui:field="stocks" text="Stocks" name="stocks"/></li>
-            <li><g:Anchor href="#contact" ui:field="contact" text="Contact" name="contact"/></li>
-          </ul>
+          <widgets:UnorderedList ui:field="nav" />
           <form action="" class="pull-right">
             <g:TextBox styleName="input-small" ui:field="user"/>
             <g:PasswordTextBox styleName="input-small" ui:field="password"/>
