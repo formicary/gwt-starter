@@ -14,13 +14,17 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.*;
 import com.google.inject.Inject;
 import com.murex.ccportal.client.presenters.TopNavBarPresenter;
+import com.mvp4g.client.view.ReverseViewInterface;
+
+import javax.inject.Singleton;
 
 /**
  * @author hsuleiman
  *         Date: 12/9/11
  *         Time: 10:15 AM
  */
-public class TopNavBar extends Composite {
+@Singleton
+public class TopNavBar extends Composite implements ReverseViewInterface<TopNavBarPresenter> {
 
   @Inject
   private TopNavBarPresenter presenter;
@@ -34,6 +38,8 @@ public class TopNavBar extends Composite {
   @UiField PasswordTextBox password;
   @UiField UListElement nav;
   @UiField Anchor stocks;
+  @UiField Anchor home;
+  @UiField Anchor contact;
 
   public TopNavBar() {
     initWidget(binder.createAndBindUi(this));
@@ -42,13 +48,44 @@ public class TopNavBar extends Composite {
     password.getElement().setAttribute("placeholder", "Password");
   }
 
-  @UiHandler({"stocks", "loginButton"})
+  @Override
+  public void setPresenter(TopNavBarPresenter presenter) {
+    this.presenter = presenter;
+  }
+
+  @Override
+  public TopNavBarPresenter getPresenter() {
+    return presenter;
+  }
+
+  @UiHandler({"stocks", "home", "contact", "loginButton"})
   public void handleClick(ClickEvent event) {
     if(event.getSource() == loginButton)
       presenter.login(user.getValue(), password.getValue());
     else {
-     // presenter.viewSelected(((Anchor)event.getSource()).getName());
+      stocks.removeStyleName("active");
+      home.removeStyleName("active");
+      contact.removeStyleName("active");
+      Anchor anchor = (Anchor) event.getSource();
+      anchor.addStyleName("active");
+      Views view = Views.valueOf(anchor.getName());
+      switch(view) {
+        case stocks:
+          presenter.goToStocks();
+          return;
+        case home:
+          presenter.goToHome();
+          return;
+        case contact:
+          presenter.goToContact();
+      }
     }
+  }
+
+  enum Views {
+    stocks,
+    home,
+    contact
   }
 
   @UiHandler({"password", "user"})

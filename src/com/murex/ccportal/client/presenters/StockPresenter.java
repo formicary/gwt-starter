@@ -24,7 +24,6 @@ public class StockPresenter extends BasePresenter<StockWatcher, CCEventBus> {
 
   private StockServiceAsync service = GWT.create(StockService.class);
 
-
   public void onLogin() {
     Timer refreshTimer = new Timer() {
       @Override
@@ -34,6 +33,10 @@ public class StockPresenter extends BasePresenter<StockWatcher, CCEventBus> {
     };
     refreshWatchList();
     refreshTimer.scheduleRepeating(1000 * 10);
+  }
+
+  public void onGoToStocks() {
+    eventBus.changeBody(view);
   }
 
   private void refreshWatchList() {
