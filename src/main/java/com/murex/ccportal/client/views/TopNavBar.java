@@ -60,7 +60,14 @@ public class TopNavBar extends Composite implements ReverseViewInterface<TopNavB
 
   @UiHandler("loginButton")
   public void handleClick(ClickEvent event) {
-    presenter.login(user.getValue(), password.getValue());
+    if(!presenter.isLoggedIn()) {
+      presenter.login(user.getValue(), password.getValue());
+    } else {
+      presenter.logout();
+      user.setVisible(true);
+      password.setVisible(true);
+      loginButton.setText("Sign in");
+    }
   }
 
   private void resetNavSelection() {
@@ -137,5 +144,7 @@ public class TopNavBar extends Composite implements ReverseViewInterface<TopNavB
     items.add(createNavItem(Views.home, "Contact", false));
     syncItems();
     loginButton.setText("Sign out");
+    user.setVisible(false);
+    password.setVisible(false);
   }
 }

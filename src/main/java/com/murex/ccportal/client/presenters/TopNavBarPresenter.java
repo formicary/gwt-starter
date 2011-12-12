@@ -15,6 +15,8 @@ import com.mvp4g.client.presenter.BasePresenter;
 @Singleton
 public class TopNavBarPresenter extends BasePresenter<TopNavBar, CCEventBus> {
 
+  private boolean loggedIn;
+
   public void onStart() {
     eventBus.changeNav(view);
     view.showLoggedOutNav();
@@ -23,8 +25,15 @@ public class TopNavBarPresenter extends BasePresenter<TopNavBar, CCEventBus> {
 
   public void login(String user, String password) {
     //TODO some check against a backend service to see if we can login, if not then dont fire event
+    loggedIn = true;
     eventBus.login();
     view.showLoggedInNav();
+  }
+
+  public void logout() {
+    loggedIn = false;
+    view.showLoggedOutNav();
+    eventBus.logout();
   }
 
   public void goToStocks() {
@@ -37,5 +46,9 @@ public class TopNavBarPresenter extends BasePresenter<TopNavBar, CCEventBus> {
 
   public void goToContact() {
     eventBus.goToContact();
+  }
+
+  public boolean isLoggedIn() {
+    return loggedIn;
   }
 }

@@ -23,9 +23,10 @@ import java.util.List;
 public class StockPresenter extends BasePresenter<StockWatcher, CCEventBus> {
 
   private StockServiceAsync service = GWT.create(StockService.class);
+  private Timer refreshTimer;
 
   public void onLogin() {
-    Timer refreshTimer = new Timer() {
+    refreshTimer = new Timer() {
       @Override
       public void run() {
         refreshWatchList();
@@ -33,6 +34,11 @@ public class StockPresenter extends BasePresenter<StockWatcher, CCEventBus> {
     };
     refreshWatchList();
     refreshTimer.scheduleRepeating(1000 * 10);
+  }
+
+  public void onLogout() {
+    if(refreshTimer != null)
+      refreshTimer.cancel();
   }
 
   public void onGoToStocks() {
