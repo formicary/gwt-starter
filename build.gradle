@@ -49,17 +49,17 @@ test {
   useTestNG()
 }
 
-gwtBuildDir = 'war'
+gwtBuildDir = 'build/war'
 
 task gwtCompile << {
   created = (new File(gwtBuildDir)).mkdirs()
   ant.java(classname: 'com.google.gwt.dev.Compiler', failOnError: 'true', fork: 'true') {
-        jvmarg(value: '-Xmx184M')
         arg(line: '-war ' + gwtBuildDir)
         arg(line: '-logLevel INFO')
         arg(line: '-style OBF')
         arg(value: 'com.murex.ccportal.CCPortal')
         classpath {
+          pathElement(location: 'build/classes/main')
           pathElement(location: 'src')
           pathElement(path: configurations.compile.asPath)
           pathElement(path: configurations.gwt.asPath)
