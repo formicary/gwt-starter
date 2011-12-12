@@ -41,7 +41,7 @@ public class StockPresenter extends BasePresenter<StockWatcher, CCEventBus> {
       refreshTimer.cancel();
   }
 
-  public void onGoToStocks() {
+  public void onStocks() {
     eventBus.changeBody(view);
   }
 

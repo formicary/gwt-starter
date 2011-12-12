@@ -10,6 +10,7 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.*;
 import com.google.inject.Inject;
+import com.murex.ccportal.client.Views;
 import com.murex.ccportal.client.presenters.TopNavBarPresenter;
 import com.murex.ccportal.client.widgets.ListItem;
 import com.murex.ccportal.client.widgets.UnorderedList;
@@ -76,12 +77,6 @@ public class TopNavBar extends Composite implements ReverseViewInterface<TopNavB
     }
   }
 
-  enum Views {
-    stocks,
-    home,
-    contact
-  }
-
   @UiHandler({"password", "user"})
   public void handleKeyPress(KeyPressEvent event) {
     if(event.getCharCode() == KeyCodes.KEY_ENTER) {
@@ -116,7 +111,7 @@ public class TopNavBar extends Composite implements ReverseViewInterface<TopNavB
         case home:
           presenter.goToHome();
           return;
-        case contact:
+        case contacts:
           presenter.goToContact();
       }
     }
@@ -132,7 +127,7 @@ public class TopNavBar extends Composite implements ReverseViewInterface<TopNavB
     items.clear();
     items.add(createNavItem(Views.home, "Home", true));
     items.add(createNavItem(Views.stocks, "About", false));
-    items.add(createNavItem(Views.contact, "Contact", false));
+    items.add(createNavItem(Views.contacts, "Contact", false));
     syncItems();
   }
 

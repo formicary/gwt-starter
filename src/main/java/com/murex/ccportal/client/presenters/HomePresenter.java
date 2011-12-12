@@ -15,7 +15,7 @@ import javax.inject.Singleton;
 @Presenter(view = HomeView.class)
 @Singleton
 public class HomePresenter extends BasePresenter<HomeView, CCEventBus> {
-  public void onGoToHome() {
+  public void onHome() {
     eventBus.changeBody(view);
   }
 
