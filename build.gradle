@@ -43,18 +43,18 @@ gwtBuildDir = 'build/war'
 task gwtCompile << {
   created = (new File(gwtBuildDir)).mkdirs()
   ant.java(classname: 'com.google.gwt.dev.Compiler', failOnError: 'true', fork: 'true') {
-        arg(line: '-war ' + gwtBuildDir)
-        arg(line: '-logLevel INFO')
-        arg(line: '-style OBF')
-        arg(value: 'com.murex.ccportal.CCPortal')
-        classpath {
-          pathElement(location: 'src/main/java')
-          pathElement(location: 'src/main/resources')
-          pathElement(path: sourceSets.main.output.asPath)
-          pathElement(path: configurations.compile.asPath)
-          pathElement(path: configurations.gwt.asPath)
-        }
-      }
+    arg(line: '-war ' + gwtBuildDir)
+    arg(line: '-logLevel INFO')
+    arg(line: '-style OBF')
+    arg(value: 'com.murex.ccportal.CCPortal')
+    classpath {
+      pathElement(location: file('src/main/java'))
+      pathElement(location: file('src/main/resources'))
+      pathElement(path: sourceSets.main.output.asPath)
+      pathElement(path: configurations.compile.asPath)
+      pathElement(path: configurations.gwt.asPath)
+    }
+  }
 }
 
 war.dependsOn gwtCompile
