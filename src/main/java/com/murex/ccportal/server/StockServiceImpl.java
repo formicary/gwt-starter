@@ -15,6 +15,7 @@ import java.util.List;
 public class StockServiceImpl implements StockService{
   @Override
   public List<String> getStocks() {
+//    if(1 == 1) throw new AuthenticationException();
     return Arrays.asList("GOOG", "ORCL", "JAVA", "GM");
   }
 }
