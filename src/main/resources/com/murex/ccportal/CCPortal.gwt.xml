@@ -3,5 +3,6 @@
 <module rename-to="CCPortal">
 
   <inherits name='com.mvp4g.Mvp4gModule'/>
+  <inherits name='com.google.gwt.query.Query'/>
   <entry-point class='com.mvp4g.client.Mvp4gEntryPoint'/>
 </module>
