@@ -1,3 +1,4 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:g='urn:import:com.google.gwt.user.client.ui' xmlns:widgets="urn:import:com.murex.ccportal.client.widgets">
   <g:HTMLPanel>
@@ -12,6 +13,19 @@
             <g:Button styleName="btn" text="Sign in" ui:field="loginButton"/>
           </form>
         </div>
+      </div>
+    </div>
+    <div id="modal-from-dom" class="modal fade hide">
+      <div class="modal-header">
+        <a href="#" class="close">&times;</a>
+        <h3>Modal Heading</h3>
+      </div>
+      <div class="modal-body">
+        <p>One fine body…</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn primary">Primary</a>
+        <a href="#" class="btn secondary">Secondary</a>
       </div>
     </div>
   </g:HTMLPanel>

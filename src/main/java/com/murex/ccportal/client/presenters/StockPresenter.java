@@ -48,11 +48,6 @@ public class StockPresenter extends BasePresenter<StockWatcher, CCEventBus> {
   private void refreshWatchList() {
     service.getStocks(new SecureAsyncCallBack<List<String>>() {
       @Override
-      public void onFailure(Throwable caught) {
-        //todo
-      }
-
-      @Override
       public void onSuccess(List<String> result) {
         for (String s : result) {
           view.addStock(s);

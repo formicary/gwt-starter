@@ -12,21 +12,29 @@ import com.murex.ccportal.client.exceptions.AuthorizationException;
 public abstract class SecureAsyncCallBack<T> implements AsyncCallback<T> {
   public void onFailure(Throwable caught) {
     if(caught instanceof AuthenticationException) {
+      alert("Auth exception");
       //redirect to login page
+      return;
     }
     else if(caught instanceof AuthorizationException) {
-      //tell the user he doesn't have rights to perform this operation
+      alert("Auth exception");
+      return;
     }
     try {
       //allow your application to handle the exception
       handleFailure(caught);
     }
     catch(Throwable e) {
-      //default application-wide error handling
+      alert("Exception " + e.getMessage());
     }
   }
 
   public void handleFailure(Throwable t) throws Throwable {
     throw t;
   }
+
+  public static native void alert(String msg) /*-{
+    console.info("msg is " + $wnd.jQuery('modal-from-dom').modal());
+    $wnd.jQuery('modal-from-dom').modal(true);
+  }-*/;
 }
