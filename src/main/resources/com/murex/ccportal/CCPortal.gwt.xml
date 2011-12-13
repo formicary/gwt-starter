@@ -2,8 +2,6 @@
     "http://google-web-toolkit.googlecode.com/svn/releases/2.0/distro-source/core/src/gwt-module.dtd">
 <module rename-to="CCPortal">
 
-  <!-- Inherit the core Web Toolkit stuff.                  -->
   <inherits name='com.mvp4g.Mvp4gModule'/>
-  <!-- Specify the app entry point class.                   -->
   <entry-point class='com.mvp4g.client.Mvp4gEntryPoint'/>
 </module>
