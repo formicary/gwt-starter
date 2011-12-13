@@ -2,9 +2,9 @@ package com.murex.ccportal.client.presenters;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.Timer;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.inject.Singleton;
 import com.murex.ccportal.client.CCEventBus;
+import com.murex.ccportal.client.SecureAsyncCallBack;
 import com.murex.ccportal.client.StockService;
 import com.murex.ccportal.client.StockServiceAsync;
 import com.murex.ccportal.client.views.StockWatcher;
@@ -46,7 +46,7 @@ public class StockPresenter extends BasePresenter<StockWatcher, CCEventBus> {
   }
 
   private void refreshWatchList() {
-    service.getStocks(new AsyncCallback<List<String>>() {
+    service.getStocks(new SecureAsyncCallBack<List<String>>() {
       @Override
       public void onFailure(Throwable caught) {
         //todo
