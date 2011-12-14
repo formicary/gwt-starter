@@ -41,12 +41,15 @@ public class TopNavBar extends Composite implements ReverseViewInterface<TopNavB
   @UiField UnorderedList nav;
   private List<ListItem> items = new ArrayList<ListItem>();
   private NavClickHandler navClickHandler = new NavClickHandler();
+  private boolean popoverInited = false;
 
   public TopNavBar() {
     initWidget(binder.createAndBindUi(this));
     //stupid gwt doesn't support placeholder attribute
     user.getElement().setAttribute("placeholder", "Username");
     password.getElement().setAttribute("placeholder", "Password");
+    user.getElement().setAttribute("rel", "popup");
+    user.getElement().setId("user-fld");
   }
 
   @Override
@@ -62,7 +65,9 @@ public class TopNavBar extends Composite implements ReverseViewInterface<TopNavB
   @UiHandler("loginButton")
   public void handleClick(ClickEvent event) {
     if(!presenter.isLoggedIn()) {
-      presenter.login(user.getValue(), password.getValue());
+      if(isLoginValid()) {
+        presenter.login(user.getValue(), password.getValue());
+      }
     } else {
       presenter.logout();
       user.setVisible(true);
@@ -80,8 +85,20 @@ public class TopNavBar extends Composite implements ReverseViewInterface<TopNavB
   @UiHandler({"password", "user"})
   public void handleKeyPress(KeyPressEvent event) {
     if(event.getCharCode() == KeyCodes.KEY_ENTER) {
-      presenter.login(user.getValue(), password.getValue());
+      if(isLoginValid()) {
+        presenter.login(user.getValue(), password.getValue());
+      }
     }
+  }
+
+  private boolean isLoginValid() {
+    jsHidePopups();
+    if(user.getText().trim().length() == 0) {
+      user.setFocus(true);
+      jsShowloginError("#user-fld", "Please specify a user name");
+      return false;
+    }
+    return true;
   }
 
   private ListItem createNavItem(Views link, String name, boolean active) {
@@ -96,10 +113,33 @@ public class TopNavBar extends Composite implements ReverseViewInterface<TopNavB
     return li;
   }
 
+  public void showloginError(String msg) {
+    jsHidePopups();
+    jsShowloginError("#login-form", msg);
+    password.setFocus(true);
+  }
+
+  public native void jsShowloginError(String selector, String error) /*-{
+    $wnd.$(selector).popover({
+      placement: 'below',
+      offset: 7,
+      content: function() { return error;},
+      title: function() { return "Error";},
+      trigger: 'manual'
+    });
+    $wnd.$(selector).popover('show');
+  }-*/;
+
+  public native void jsHidePopups() /*-{
+    $wnd.$('#login-form').popover('hide');
+    $wnd.$('#user-fld').popover('hide');
+  }-*/;
+
   private class NavClickHandler implements ClickHandler {
     @Override
     public void onClick(ClickEvent event) {
       resetNavSelection();
+      jsHidePopups();
       Anchor anchor = (Anchor) event.getSource();
       anchor.getParent().addStyleName("active");
       //strip out 'nav-' prefix

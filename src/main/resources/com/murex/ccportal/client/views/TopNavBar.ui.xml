@@ -7,10 +7,10 @@
         <div class="container">
           <a class="brand" href="#">Some Portal</a>
           <widgets:UnorderedList ui:field="nav" />
-          <form action="" class="pull-right">
-            <g:TextBox styleName="input-small" ui:field="user"/>
-            <g:PasswordTextBox styleName="input-small" ui:field="password"/>
-            <g:Button styleName="btn" text="Sign in" ui:field="loginButton"/>
+          <form action="" class="pull-right" id="login-form">
+              <g:TextBox styleName="input-small" ui:field="user"/>
+              <g:PasswordTextBox styleName="input-small" ui:field="password"/>
+              <g:Button styleName="btn" text="Sign in" ui:field="loginButton"/>
           </form>
         </div>
       </div>
