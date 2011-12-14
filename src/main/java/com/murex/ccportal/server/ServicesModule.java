@@ -1,6 +1,7 @@
 package com.murex.ccportal.server;
 
 import com.google.inject.AbstractModule;
+import com.murex.ccportal.client.LoginService;
 import com.murex.ccportal.client.StockService;
 
 /**
@@ -12,5 +13,6 @@ public class ServicesModule extends AbstractModule {
   @Override
   public void configure() {
     bind(StockService.class).to(StockServiceImpl.class);
+    bind(LoginService.class).to(LoginServiceImpl.class);
   }
 }
