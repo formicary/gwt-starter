@@ -98,17 +98,6 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-4/com.googlecode.gwtquery/gwtquery/c12498cf18507aa6433a94eb7d3e77d5/jars/gwtquery-1.1.0.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-4/com.googlecode.gwtquery/gwtquery/c12498cf18507aa6433a94eb7d3e77d5/sources/gwtquery-1.1.0-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES>
           <root url="jar://$USER_HOME$/.gradle/caches/artifacts-4/com.google.inject/guice/c12498cf18507aa6433a94eb7d3e77d5/jars/guice-3.0.jar!/" />
         </CLASSES>
         <JAVADOC />

@@ -16,7 +16,7 @@ import javax.inject.Singleton;
  *         Date: 12/9/11
  *         Time: 11:57 AM
  */
-@Events(startView = MainView.class, historyOnStart = true)
+@Events(startView = MainView.class)
 @Singleton
 //@Debug
 public interface CCEventBus extends EventBus {
@@ -31,13 +31,13 @@ public interface CCEventBus extends EventBus {
   void logout();
 
   @InitHistory
-  @Event(handlers = HomePresenter.class, historyConverter = NavHistoryConverter.class)
+  @Event(handlers = HomePresenter.class)
   void home();
 
-  @Event(handlers = StockPresenter.class, historyConverter = NavHistoryConverter.class)
+  @Event(handlers = StockPresenter.class)
   void stocks();
 
-  @Event(historyConverter = NavHistoryConverter.class)
+  @Event
   void contacts();
 
   @Event(handlers = MainViewPresenter.class)
