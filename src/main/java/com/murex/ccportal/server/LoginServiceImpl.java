@@ -12,10 +12,12 @@ import javax.inject.Singleton;
  */
 @Singleton
 public class LoginServiceImpl implements LoginService {
+  int count;
+
   @Override
   public void login(String user, String password) {
     if(password.length() == 0) {
-      throw new ValidationException("Invalid password");
+      throw new ValidationException("Invalid password " + count++);
     }
   }
 

@@ -120,17 +120,26 @@ public class TopNavBar extends Composite implements ReverseViewInterface<TopNavB
   }
 
   public native void jsShowloginError(String selector, String error) /*-{
-    $wnd.$(selector).popover({
+    var el = $wnd.$(selector);
+    el.data('popover', null);
+    el.popover({
       placement: 'below',
       offset: 7,
       content: function() { return error;},
       title: function() { return "Error";},
       trigger: 'manual'
     });
-    $wnd.$(selector).popover('show');
+    $wnd.$($doc).bind('keyup.navpopup', function(e) {
+      if(e.which == 27) {
+        el.popover('hide');
+        $wnd.$($doc).unbind('keyup.navpopup');
+      }
+    });
+    el.popover('show');
   }-*/;
 
   public native void jsHidePopups() /*-{
+    $wnd.$(document).unbind('keyup.navpopup');
     $wnd.$('#login-form').popover('hide');
     $wnd.$('#user-fld').popover('hide');
   }-*/;
