@@ -15,17 +15,15 @@
         </div>
       </div>
     </div>
-    <div id="modal-from-dom" class="modal fade hide">
+    <div id="error-ok" class="modal fade hide">
       <div class="modal-header">
-        <a href="#" class="close">&times;</a>
-        <h3>Modal Heading</h3>
+        <h3>Error</h3>
       </div>
       <div class="modal-body">
-        <p>One fine body…</p>
+        <p id="modal-body-text"></p>
       </div>
       <div class="modal-footer">
-        <a href="#" class="btn primary">Primary</a>
-        <a href="#" class="btn secondary">Secondary</a>
+        <a href="#" class="btn primary">OK</a>
       </div>
     </div>
   </g:HTMLPanel>

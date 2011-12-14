@@ -12,12 +12,12 @@ import com.murex.ccportal.client.exceptions.AuthorizationException;
 public abstract class SecureAsyncCallBack<T> implements AsyncCallback<T> {
   public void onFailure(Throwable caught) {
     if(caught instanceof AuthenticationException) {
-      alert("Auth exception");
+      alert("You must be logged in to perform this action.");
       //redirect to login page
       return;
     }
     else if(caught instanceof AuthorizationException) {
-      alert("Auth exception");
+      alert("You do not have permission to perform this action.");
       return;
     }
     try {
@@ -34,7 +34,10 @@ public abstract class SecureAsyncCallBack<T> implements AsyncCallback<T> {
   }
 
   public static native void alert(String msg) /*-{
-    console.info("msg is " + $wnd.jQuery('modal-from-dom').modal());
-    $wnd.jQuery('modal-from-dom').modal(true);
+    $wnd.$('#modal-body-text').text(msg);
+    $wnd.$('#error-ok').modal({
+      keyboard: true,
+      show: true
+    });
   }-*/;
 }
