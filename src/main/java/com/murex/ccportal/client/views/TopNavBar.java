@@ -130,8 +130,10 @@ public class TopNavBar extends Composite implements ReverseViewInterface<TopNavB
       trigger: 'manual'
     });
     $wnd.$($doc).bind('keyup.navpopup', function(e) {
+      //escape gets rid of the popover
       if(e.which == 27) {
         el.popover('hide');
+        el.data('popover', null);
         $wnd.$($doc).unbind('keyup.navpopup');
       }
     });

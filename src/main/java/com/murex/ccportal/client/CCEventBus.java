@@ -30,7 +30,6 @@ public interface CCEventBus extends EventBus {
   @Event(handlers = {StockPresenter.class, HomePresenter.class})
   void logout();
 
-  @InitHistory
   @Event(handlers = HomePresenter.class)
   void home();
 
