@@ -3,10 +3,7 @@ package com.murex.ccportal.client.presenters;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.Timer;
 import com.google.inject.Singleton;
-import com.murex.ccportal.client.CCEventBus;
-import com.murex.ccportal.client.SecureAsyncCallBack;
-import com.murex.ccportal.client.StockService;
-import com.murex.ccportal.client.StockServiceAsync;
+import com.murex.ccportal.client.*;
 import com.murex.ccportal.client.views.StockWatcher;
 import com.mvp4g.client.annotation.Presenter;
 import com.mvp4g.client.presenter.BasePresenter;
@@ -46,10 +43,10 @@ public class StockPresenter extends BasePresenter<StockWatcher, CCEventBus> {
   }
 
   private void refreshWatchList() {
-    service.getStocks(new SecureAsyncCallBack<List<String>>() {
+    service.getStocks(new SecureAsyncCallBack<List<Stock>>() {
       @Override
-      public void onSuccess(List<String> result) {
-        for (String s : result) {
+      public void onSuccess(List<Stock> result) {
+        for (Stock s : result) {
           view.addStock(s);
         }
       }

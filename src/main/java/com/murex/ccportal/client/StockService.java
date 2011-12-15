@@ -14,5 +14,5 @@ import java.util.List;
  */
 @RemoteServiceRelativePath("GWT.rpc")
 public interface StockService extends RemoteService {
-  public List<String> getStocks() throws AuthenticationException, AuthorizationException;
+  public List<Stock> getStocks() throws AuthenticationException, AuthorizationException;
 }
