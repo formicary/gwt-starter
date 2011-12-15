@@ -7,7 +7,7 @@
         <div class="container">
           <a class="brand" href="#">Some Portal</a>
           <widgets:UnorderedList ui:field="nav" />
-          <form action="" class="pull-right" id="login-form">
+          <form action="" class="nav secondary-nav" id="login-form">
               <g:TextBox styleName="input-small" ui:field="user"/>
               <g:PasswordTextBox styleName="input-small" ui:field="password"/>
               <g:Button styleName="btn" text="Sign in" ui:field="loginButton"/>
