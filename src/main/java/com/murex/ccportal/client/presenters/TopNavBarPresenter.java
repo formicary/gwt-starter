@@ -25,7 +25,7 @@ public class TopNavBarPresenter extends BasePresenter<TopNavBar, CCEventBus> {
   public void onStart() {
     eventBus.changeNav(view);
     view.showLoggedOutNav();
-//    goToHome();
+    goToHome();
   }
 
   public void login(String user, String password) {

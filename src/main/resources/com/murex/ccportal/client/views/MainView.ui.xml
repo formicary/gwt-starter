@@ -3,6 +3,10 @@
              >
   <g:HTMLPanel>
     <g:SimplePanel ui:field="nav"/>
-    <g:SimplePanel ui:field="body"/>
+    <div class="container">
+      <div class="content">
+      <g:SimplePanel ui:field="body"/>
+      </div>
+    </div>
   </g:HTMLPanel>
 </ui:UiBinder>

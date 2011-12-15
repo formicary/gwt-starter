@@ -1,17 +1,13 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
   <g:HTMLPanel>
-    <div class="container">
-      <div class="content">
-        <div class="row">
-          <g:FlexTable ui:field="stocksFlexTable" styleName="condensed-table bordered-table zebra-striped"/>
-        </div>
-        <div class="row">
-          <g:TextBox ui:field="newSymbolTextBox" />
-          <g:Button text="Add" ui:field="addStockButton" styleName="btn primary"/>
-          <g:Label ui:field="lastUpdatedLabel" />
-        </div>
-      </div>
+    <div class="row">
+      <g:FlexTable ui:field="stocksFlexTable" styleName="condensed-table bordered-table zebra-striped"/>
+    </div>
+    <div class="row">
+      <g:TextBox ui:field="newSymbolTextBox" />
+      <g:Button text="Add" ui:field="addStockButton" styleName="btn primary"/>
+      <g:Label ui:field="lastUpdatedLabel" />
     </div>
   </g:HTMLPanel>
 </ui:UiBinder>
