@@ -41,7 +41,6 @@ public class TopNavBar extends Composite implements ReverseViewInterface<TopNavB
   @UiField UnorderedList nav;
   private List<ListItem> items = new ArrayList<ListItem>();
   private NavClickHandler navClickHandler = new NavClickHandler();
-  private boolean popoverInited = false;
 
   public TopNavBar() {
     initWidget(binder.createAndBindUi(this));
