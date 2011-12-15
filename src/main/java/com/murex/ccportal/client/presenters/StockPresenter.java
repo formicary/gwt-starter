@@ -30,12 +30,14 @@ public class StockPresenter extends BasePresenter<StockWatcher, CCEventBus> {
       }
     };
     refreshWatchList();
+    view.setEnabled(true);
     refreshTimer.scheduleRepeating(1000 * 10);
   }
 
   public void onLogout() {
     if(refreshTimer != null)
       refreshTimer.cancel();
+    view.setEnabled(false);
   }
 
   public void onStocks() {

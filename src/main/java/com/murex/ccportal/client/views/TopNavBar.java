@@ -176,7 +176,7 @@ public class TopNavBar extends Composite implements ReverseViewInterface<TopNavB
   public void showLoggedOutNav() {
     items.clear();
     items.add(createNavItem(Views.home, "Home", true));
-    items.add(createNavItem(Views.stocks, "About", false));
+    items.add(createNavItem(Views.stocks, "Stocks", false));
     items.add(createNavItem(Views.contacts, "Contact", false));
     syncItems();
   }
@@ -184,7 +184,7 @@ public class TopNavBar extends Composite implements ReverseViewInterface<TopNavB
   public void showLoggedInNav() {
     items.clear();
     items.add(createNavItem(Views.home, "Home", true));
-    items.add(createNavItem(Views.home, "LoggedInStuff", false));
+    items.add(createNavItem(Views.stocks, "Stocks", false));
     items.add(createNavItem(Views.home, "Reports", false));
     items.add(createNavItem(Views.home, "Contact", false));
     syncItems();

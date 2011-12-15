@@ -42,6 +42,7 @@ public class StockWatcher extends Composite {
     stocksFlexTable.setText(0, 1, "Price");
     stocksFlexTable.setText(0, 2, "Change");
     stocksFlexTable.setText(0, 3, "Remove");
+    setEnabled(false);
   }
 
   @UiHandler("newSymbolTextBox")
@@ -88,4 +89,8 @@ public class StockWatcher extends Composite {
     stocksFlexTable.setWidget(row, 3, removeStockButton);
   }
 
+  public void setEnabled(boolean b) {
+    addStockButton.setEnabled(b);
+    newSymbolTextBox.setEnabled(b);
+  }
 }

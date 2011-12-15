@@ -18,8 +18,4 @@ public class HomePresenter extends BasePresenter<HomeView, CCEventBus> {
   public void onHome() {
     eventBus.changeBody(view);
   }
-
-  public void onLogout() {
-    eventBus.changeBody(view);
-  }
 }

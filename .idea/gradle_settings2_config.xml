@@ -28,7 +28,7 @@
       <setting name="setup-tab">
         <setting name="setup">
           <setting name="custom-gradle-executor" />
-          <setting name="current-directory" value="$PROJECT_DIR$" />
+          <setting name="current-directory" value="C:\hani\gwt-starter" />
           <setting name="log-level" value="LIFECYCLE" />
         </setting>
       </setting>

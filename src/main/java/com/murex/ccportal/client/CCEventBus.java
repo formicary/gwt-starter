@@ -27,7 +27,7 @@ public interface CCEventBus extends EventBus {
   @Event(handlers = {StockPresenter.class})
   void login();
 
-  @Event(handlers = {StockPresenter.class, HomePresenter.class})
+  @Event(handlers = {StockPresenter.class})
   void logout();
 
   @Event(handlers = HomePresenter.class)
